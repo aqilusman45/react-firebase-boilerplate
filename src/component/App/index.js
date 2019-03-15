@@ -11,7 +11,7 @@ import { Dashboard } from "../Dashboard";
 import { AccountSettings } from "../Account_Settings";
 import { Home } from "../Home";
 import { Navigation } from '../Navigation';
-
+import {ForgotPassword} from '../Forgot_Password';
 
 class App extends Component {
     render() {
@@ -25,6 +25,8 @@ class App extends Component {
                     <Route path={ROUTE.HOME} exact component={Home} />
                     <Route path={ROUTE.DASHBOARD} exact component={Dashboard} />
                     <Route path={ROUTE.ACCOUNT_SETTINGS} exact component={AccountSettings} />
+                    <Route path={ROUTE.FORGET_PASSWORD} exact component={ForgotPassword} />
+
                 </div>
             </Router>
         )
