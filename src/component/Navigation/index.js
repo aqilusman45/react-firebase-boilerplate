@@ -1,16 +1,25 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
 
-import { Link } from 'react-router-dom';
+import './styles.css';
 
-import * as ROUTES from "../../constants/routes";
 
-export const Navigation = () => (
-    <div>
+const Navigation1 = (props) => {
+    return (
+
+
         <header>
+
+            <a class="logo" href={props.location.pathname}>{props.location.pathname }</a>
+
+            <input id="nav" type="checkbox" />
+            <label for="nav"></label>
+
             <nav>
                 <ul>
-                    <li>  
-                     <Link to={ROUTES.LANDING}>Landing</Link>
+                    <li>
+                        <Link to={ROUTES.LANDING}>Landing</Link>
                     </li>
                     <li>
                         <Link to={ROUTES.SIGNUP}>Sign Up</Link>
@@ -23,7 +32,11 @@ export const Navigation = () => (
                     </li>
                 </ul>
             </nav>
+
         </header>
-        <hr />
-    </div>
-)
+    );
+}
+
+const Navigation = withRouter(Navigation1);
+
+export { Navigation };
