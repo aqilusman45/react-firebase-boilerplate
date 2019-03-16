@@ -17,7 +17,7 @@ class App extends Component {
     render() {
         return (
             <Router>
-                <div>
+                <div className="Wrapper">
                     <Navigation />
                     <Route path={ROUTE.LANDING} exact component={Landing} />
                     <Route path={ROUTE.SIGNIN} exact component={SignIn} />

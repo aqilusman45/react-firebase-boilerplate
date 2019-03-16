@@ -2,7 +2,7 @@ import React from 'react';
 
 const FirebaseContext = React.createContext(null);
 
-const withFirebase = (Component) => (...props) => {
+const withFirebase = (Component) => props => {
     return (
         <FirebaseContext.Consumer>
             {
