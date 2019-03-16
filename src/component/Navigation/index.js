@@ -18,6 +18,9 @@ export const Navigation = () => (
                     <li>
                         <Link to={ROUTES.SIGNIN}>Sign In</Link>
                     </li>
+                    <li>
+                        <Link to={ROUTES.FORGET_PASSWORD}>Forgot Password?</Link>
+                    </li>
                 </ul>
             </nav>
         </header>
