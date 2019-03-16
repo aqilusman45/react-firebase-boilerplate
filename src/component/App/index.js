@@ -18,7 +18,10 @@ class App extends Component {
         return (
             <Router>
                 <div className="Wrapper">
+                    <div>
                     <Navigation />
+                    </div>
+                    <div>
                     <Route path={ROUTE.LANDING} exact component={Landing} />
                     <Route path={ROUTE.SIGNIN} exact component={SignIn} />
                     <Route path={ROUTE.SIGNUP} exact component={SignUp} />
@@ -26,7 +29,7 @@ class App extends Component {
                     <Route path={ROUTE.DASHBOARD} exact component={Dashboard} />
                     <Route path={ROUTE.ACCOUNT_SETTINGS} exact component={AccountSettings} />
                     <Route path={ROUTE.FORGET_PASSWORD} exact component={ForgotPassword} />
-
+                    </div>
                 </div>
             </Router>
         )
