@@ -9,6 +9,7 @@ import * as ROUTES from "../../constants/routes";
 const INITIAL_STATE = {
     username: '',
     email: '',
+    uid: '',
     passwordOne: '',
     passwordTwo: '',
     error: null,
@@ -22,9 +23,18 @@ class SignUpComponent extends React.Component {
 
     onSubmit = (event) => {
         event.preventDefault();
-        const { email, passwordOne } = this.state;
+        const { email, passwordOne, username } = this.state;
         this.props.firebase
             .doCreateUserWithEmailAndPassword(email, passwordOne)
+            .then((authUser)=>{
+            const uid = authUser.user.uid;
+              this.props.firebase.users(username).set({
+                    username,
+                    email,
+                    uid,
+                  }, {merge: true});
+                 return authUser 
+            })
             .then(() => {
                 this.setState({
                     ...INITIAL_STATE
