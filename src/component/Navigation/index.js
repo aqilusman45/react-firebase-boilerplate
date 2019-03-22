@@ -11,10 +11,10 @@ const Navigation1 = (props) => {
 
         <header>
 
-            <a class="logo" href={props.location.pathname}>{props.location.pathname }</a>
+            <a className="logo" href={props.location.pathname}>{props.location.pathname }</a>
 
             <input id="nav" type="checkbox" />
-            <label for="nav"></label>
+            <label htmlFor="nav"></label>
 
             <nav>
                 <ul>

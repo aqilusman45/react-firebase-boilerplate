@@ -21,7 +21,7 @@ export const SignUpForm = (props) => {
                         <label>
                             <div> Username</div>
                             <div>
-                                <input type="username" name="username" value={username} onChange={props.onChange} />
+                                <input type="username" name="username" pattern="[^' ']+" title="No Spaces are Allowed" value={username} onChange={props.onChange} />
                             </div>
                         </label>
                     </div>
@@ -39,7 +39,9 @@ export const SignUpForm = (props) => {
                                 Password
                         </div>
                             <div>
-                                <input type="password" name="passwordOne" value={passwordOne} onChange={props.onChange} />
+                                <input type="password" name="passwordOne" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                 title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                 value={passwordOne} onChange={props.onChange} />
                             </div>
                         </label>
                     </div>
