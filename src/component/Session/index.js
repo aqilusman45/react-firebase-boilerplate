@@ -3,4 +3,6 @@ import {AuthenticatedUser} from './context';
 
 import { withAuthentication } from './withAuthentication';
 
-export {AuthenticatedUser, withAuthentication};
+import withAuthorization from './withAuthorization';
+
+export { AuthenticatedUser, withAuthentication, withAuthorization };

@@ -5,7 +5,7 @@ export const ChangePasswordForm = (props) => {
     console.log(props);
 
     const { passwordOne, passwordTwo, error } = props.state;
-    const isDisabled = passwordOne !== passwordTwo;
+    const isDisabled = passwordOne !== passwordTwo || passwordOne === '' || passwordTwo === '';
     return (
         <div >
             <div >
