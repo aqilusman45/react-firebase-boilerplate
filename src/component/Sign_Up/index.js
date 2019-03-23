@@ -12,7 +12,6 @@ const INITIAL_STATE = {
     uid: '',
     passwordOne: '',
     passwordTwo: '',
-    roles: [],
     error: null,
 }
 
@@ -24,7 +23,7 @@ class SignUpComponent extends React.Component {
 
     onSubmit = (event) => {
         event.preventDefault();
-        const { email, passwordOne, username, roles } = this.state;
+        const { email, passwordOne, username} = this.state;
         this.props.firebase
             .doCreateUserWithEmailAndPassword(email, passwordOne)
             .then((authUser)=>{
