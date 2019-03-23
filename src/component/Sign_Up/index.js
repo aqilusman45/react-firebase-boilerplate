@@ -12,6 +12,7 @@ const INITIAL_STATE = {
     uid: '',
     passwordOne: '',
     passwordTwo: '',
+    roles: [],
     error: null,
 }
 
@@ -23,7 +24,7 @@ class SignUpComponent extends React.Component {
 
     onSubmit = (event) => {
         event.preventDefault();
-        const { email, passwordOne, username } = this.state;
+        const { email, passwordOne, username, roles } = this.state;
         this.props.firebase
             .doCreateUserWithEmailAndPassword(email, passwordOne)
             .then((authUser)=>{
@@ -39,7 +40,7 @@ class SignUpComponent extends React.Component {
                 this.setState({
                     ...INITIAL_STATE
                 });
-                this.props.history.push(ROUTES.HOME);
+                this.props.history.push(ROUTES.DASHBOARD);
             })
             .catch((error) => {
                 this.setState({ error })

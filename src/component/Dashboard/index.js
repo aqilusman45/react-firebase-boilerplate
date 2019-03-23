@@ -1,15 +1,14 @@
 import React from 'react';
-import { ChangePassword } from "../Change_Password";
-import { SignOut } from '../SignOut';
+import {SignOut} from '../SignOut';
+import { withAuthorization } from "../Session";
 
-export const Dashboard = () => (
-    <div className="SignIn-Page">
-        <div className="SignIn-Form-Wrapper">
-            <div className="SignIn-Form">
-                <h1>Dashboard</h1>
-                <ChangePassword />
-                <SignOut />
-            </div>
-        </div>
+const Dashboard = () =>(
+    <div>
+        <h1>Dashboard</h1>
+        <SignOut/>
     </div>
 )
+
+const condition = authUser => !!authUser;
+
+export default withAuthorization(condition)(Dashboard);

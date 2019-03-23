@@ -1,5 +1,8 @@
 import React from 'react';
 import './styles.css'
+import * as ROUTES from '../../constants/routes';
+import { Link } from "react-router-dom";
+
 
 export const SignInForm = (props) => {
     const { email, password, error } = props.formInputs;
@@ -38,6 +41,18 @@ export const SignInForm = (props) => {
                     </div>
                 </form>
             {error ? <p>{error.message}</p> : <p></p>}
+            </div>
+            <div>
+                <div>
+                    <div>
+                    Not a User? <Link to={ROUTES.SIGNUP}>Sign Up</Link>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <Link to={ROUTES.FORGET_PASSWORD}>Forgot Password?</Link>
+                    </div>
+                </div>
             </div>
         </div>
     )
